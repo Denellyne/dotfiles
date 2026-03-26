@@ -24,9 +24,12 @@ unset rc
 fastfetch
 # tmux
 # Alias
+# Neovim alias
 alias vi=nvim
+# Easy update system alias
 alias sysupd='sudo dnf upgrade -y'
-#alias gitc="git clone git@github.com:Denellyne/$1.git"
+# Easy Git fetch & pull
+alias gitfp='git fetch && git pull'
 
 gitcp() {
   git clone --recursive git@github.com:Denellyne/"$1".git

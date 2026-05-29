@@ -1,14 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Copying bash config..."
 cp ./.bashrc ~/
+source ~/.bashrc
 
 echo "Copying tmux config..."
 cp ./.tmux.conf ~/
+tmux source-file ~/.tmux.conf > /dev/null 2>&1
 
 echo "Copying Hyprland config..."
 cp -r ./hypr/ ./waybar/ ~/.config/
-hyprctl reload
+hyprctl reload > /dev/null 2>&1
 
 echo "Copying nvim config..."
 cp -r ./nvim/ ~/.config/

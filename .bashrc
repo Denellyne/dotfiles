@@ -3,7 +3,7 @@
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
-
+# export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 # User specific environment
 if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
@@ -31,6 +31,9 @@ alias sysupd='sudo dnf upgrade -y'
 # Easy Git fetch & pull
 alias gitfp='git fetch && git pull'
 
+# Hyprland
+# alias ls='exa -l -a'
+#source /usr/share/bash-completion/bash_completion
 gitcp() {
   git clone --recursive git@github.com:Denellyne/"$1".git
 }
@@ -46,11 +49,7 @@ export GPG_TTY=$(tty)
 tm() {
   tmux new-session -As "$(basename "$PWD")"
 }
-# Auto-load ESP-IDF only in project folders
-esp-get() {
-  . ~/code/esp-idf/export.sh
-}
-esp-build(){
-  idf.py build && idf.py flash monitor
+tmkill(){
+  tmux kill-session -t $1
 }
 

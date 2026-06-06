@@ -12,7 +12,9 @@
 
 #### Hyprland
 
-  Minimal configuration with support for Waybar HyprShot Hyprlock and a few thins more.
+  Minimal configuration with support for Waybar HyprShot Hyprlock and a few things more.
+
+  I use Waybar HyprPaper HyprShot HyprLock Wofi Cava and Mako on my setup to give a clean look  
 
   This is the look of my setup
 

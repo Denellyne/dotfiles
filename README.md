@@ -1,4 +1,4 @@
-<# Dotfiles
+# Dotfiles
 
 ### This Repository hosts all my configurations and dotfiles
 

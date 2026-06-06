@@ -10,7 +10,7 @@
 
   "group/info":{
     "orientation": "horizontal",
-    "modules": ["clock","hyprland/workspaces"]
+    "modules": ["clock","custom/dynamic-pad","hyprland/workspaces"]
   },
   "group/system": {
     "orientation": "horizontal",
@@ -24,6 +24,12 @@
       "group/drawer"
     ]
   },
+"custom/dynamic-pad": {
+"exec": "cat ~/.config/waybar/workspaces_pad.fifo",
+    "restart-interval": 1,
+    "tooltip": false
+  },
+  
 "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
     "return-type": "json"
@@ -92,8 +98,8 @@
 
   "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetoothStatus.sh",
-    "interval": 3,
-    "on-click": "~/.config/waybar/scripts/bluetoothMenu.sh"
+    "on-click": "~/.config/waybar/scripts/bluetoothMenu.sh",
+    "persistent" : true
   },
 
   "custom/power": {
@@ -109,8 +115,8 @@
 
 "custom/temp": {
     "format": "  Temperature",
-  "exec": "bash -c 'cpu=$(awk \"{printf \\\"%d\\\", \\$1/1000}\" /sys/class/hwmon/hwmon4/temp1_input 2>/dev/null | head -n1); gpu=$(awk \"{printf \\\"%d\\\", \\$1/1000}\" /sys/class/drm/card2/device/hwmon/hwmon2/temp1_input 2>/dev/null | head -n1); echo \" ${cpu}°C  󰢮 ${gpu}°C\"'",
-  "interval": 3,
+  "exec": "~/.config/waybar/scripts/temp.sh",
+  "persistent": true,
   "tooltip": true,
   "tooltip-format": "{}"
 },

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+while [[ true ]]; do
+ 
 STATE=$(bluetoothctl show | awk '/Powered:/ {print $2}')
 
 
@@ -16,3 +18,7 @@ if [ "$STATE" = "yes" ]; then
 else
   echo " Off"
 fi
+sleep 5
+done
+
+

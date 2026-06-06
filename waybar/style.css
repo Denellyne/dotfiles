@@ -1,4 +1,5 @@
 /* Basic Reset */
+@import "dynamic_override.css";
 * {
     font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
@@ -7,7 +8,6 @@
 window#waybar {
      background: rgba(20, 20, 20, 0);
 }
-
 #workspaces button {
     padding: 0 1px;
     background: transparent;
@@ -24,6 +24,11 @@ window#waybar {
 #workspaces,#clock{
     background: transparent;
     padding: 0px 25px;
+
+}
+#clock{
+    padding: 0px 10px;
+
 }
 
 #custom-cava {
@@ -126,3 +131,23 @@ min-width: 330px;
     padding: 0 6px;
 }
 
+/* --- Dynamic Padding Adjustments --- */
+/* When 1 workspace exists, we need a large padding to push it to the center */
+#custom-dynamic-pad.count-1 + #workspaces {
+    padding-left: 45px;
+}
+
+/* When a 2nd workspace is created, we reduce the padding slightly to keep the cluster centered */
+#custom-dynamic-pad.count-2 + #workspaces {
+    padding-left: 33px;
+}
+
+/* When 3 workspaces exist, reduce it further */
+#custom-dynamic-pad.count-3 + #workspaces {
+    padding-left: 21px;
+}
+
+/* When 4 workspaces exist, they occupy the remaining room naturally */
+#custom-dynamic-pad.count-4 + #workspaces {
+    padding-left: 9px;
+}

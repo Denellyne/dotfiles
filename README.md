@@ -1,4 +1,4 @@
-# Dotfiles
+<# Dotfiles
 
 ### This Repository hosts all my configurations and dotfiles
 
@@ -16,5 +16,4 @@
 
   This is the look of my setup
 
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/92ee436f-bdae-4230-accb-538b73f1db24" />
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c942d13b-bdc2-4295-a452-1c7c638b1576" />

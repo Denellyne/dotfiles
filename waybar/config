@@ -15,11 +15,35 @@
       "memory",
       "pulseaudio",
       "custom/bluetooth",
-      "custom/power"
+      "battery",
+      "custom/power",
+      "group/drawer"
     ]
   },
+
+"group/drawer": {
+  "orientation": "horizontal",
+  "drawer": {
+    "transition-duration": 250,
+    "transition-left-to-right": true
+  },
+  "modules": [
+    "custom/drawer-toggle",
+    "network",
+    "custom/temp",
+    "backlight",
+    "power-profiles-daemon"
+  ]
+},
+"custom/drawer-toggle": {
+  "format": " Misc ",
+  "tooltip": true,
+  "tooltip-format": "System drawer"
+},
   "clock": {
-    "format": "  {:%H:%M %d/%m/%y}"
+    "format": "  {:%H:%M %d/%m/%y}",
+  "tooltip": true,
+  "tooltip-format" : "System Clock"
   },
 
   "cpu": {
@@ -28,6 +52,17 @@
 
   "memory": {
     "format": "󰍛  {}%"
+  },
+
+  "battery": {
+    "bat": "BAT2",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
   },
 
   "network": {
@@ -42,22 +77,45 @@
     "format-icons": {
       "default": ["", "", ""]
     },
-
     "on-click": "pavucontrol",
     "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
   },
+
   "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetoothStatus.sh",
     "interval": 3,
     "on-click": "~/.config/waybar/scripts/bluetoothMenu.sh"
   },
+
   "custom/power": {
     "format": "⏻ Power",
-    "on-click" : "~/.config/waybar/scripts/powerMenu.sh"
+  "tooltip": true,
+    "tooltip-format": "Power menu",
+    "on-click": "~/.config/waybar/scripts/powerMenu.sh"
+  },
 
+  "backlight": {
+    "format": " 󰃠 {percent}%"
+  },
+
+"custom/temp": {
+    "format": "  Temperature",
+  "exec": "bash -c 'cpu=$(awk \"{printf \\\"%d\\\", \\$1/1000}\" /sys/class/hwmon/hwmon4/temp1_input 2>/dev/null | head -n1); gpu=$(awk \"{printf \\\"%d\\\", \\$1/1000}\" /sys/class/drm/card2/device/hwmon/hwmon2/temp1_input 2>/dev/null | head -n1); echo \" ${cpu}°C  󰢮 ${gpu}°C\"'",
+  "interval": 3,
+  "tooltip": true,
+  "tooltip-format": "{}"
+},
+  "power-profiles-daemon": {
+    "format": " {icon}",
+  "tooltip": true,
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
   }
-
 }

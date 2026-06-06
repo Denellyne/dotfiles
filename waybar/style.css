@@ -58,6 +58,9 @@ window#waybar {
    -1px -1px 2px #000;
 }
 
+#battery:hover{
+  color : rgb(9, 209, 30);
+}
 #cpu:hover{
   color : rgb(9, 209, 30);
 }
@@ -65,16 +68,47 @@ window#waybar {
 #memory:hover{
   color : rgb(0, 92, 255);
 }
+
+#custom-temp:hover{
+  color : rgb(235, 55, 55);
+}
 #custom-power:hover{
   color : rgb(235, 55, 55);
 }
 #custom-bluetooth:hover {
   color :rgb(0, 92, 255)
 }
+
+#network:hover {
+  color :rgb(0, 92, 255)
+}
 #pulseaudio:hover {
     color: rgb(174, 162, 230);
 }
+#power-profiles-daemon:hover {
+    color: rgb(174, 162, 230);
+}
+#group-system {
+    padding-right: 10px;
+    background: rgba(20, 20, 20, 0.6);
+    margin: 0px 2px;
+    border-radius: 12px;
+}
 
+#custom-drawer-toggle:hover {
+    color: rgb(174, 162, 230);
+}
+#group-drawer {
+    padding: 0px 6px;
+    background: transparent;
+}
+#group-drawer #network,
+#group-drawer #custom-temp,
+#group-drawer #backlight,
+#group-drawer #power-profiles-daemon {
+    background: transparent;
+    padding: 0 6px;
+}
 /* .modules-right { */
 /*     padding-right: 10px; */
 /* } */

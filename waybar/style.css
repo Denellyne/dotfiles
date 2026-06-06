@@ -9,7 +9,7 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 2px;
+    padding: 0 1px;
     background: transparent;
     color: #ffffff;
     border-radius: 0;
@@ -22,12 +22,16 @@ window#waybar {
 }
 
 #workspaces,#clock{
-    padding: 0px 10px;
-    background: rgba(20, 20, 20, 0.6);
-    margin: 0px 2px;
-    border-radius: 12px;
- box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4); 
+    background: transparent;
+    padding: 0px 25px;
 }
+
+#custom-cava {
+    font-family: "JetBrains Mono", "Noto Sans Mono", monospace;
+    background: transparent;
+margin-right: 16px; 
+}
+
 
 #system 
 {
@@ -88,17 +92,29 @@ window#waybar {
 #power-profiles-daemon:hover {
     color: rgb(174, 162, 230);
 }
+
+#info {
+    padding: 0px 10px;
+    margin: 0px 2px;
+    border-radius: 12px;
+    background: rgba(20, 20, 20, 0.6);
+ box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4); 
+min-width: 300px;
+}
 #group-system {
+min-width: 300px;
     padding-right: 10px;
     background: rgba(20, 20, 20, 0.6);
     margin: 0px 2px;
     border-radius: 12px;
+
 }
 
 #custom-drawer-toggle:hover {
     color: rgb(174, 162, 230);
 }
 #group-drawer {
+    transition: all 0.2s ease;
     padding: 0px 6px;
     background: transparent;
 }
@@ -109,6 +125,4 @@ window#waybar {
     background: transparent;
     padding: 0 6px;
 }
-/* .modules-right { */
-/*     padding-right: 10px; */
-/* } */
+

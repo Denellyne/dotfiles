@@ -2,12 +2,16 @@
   "layer": "top",
   "position": "top",
 
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-left": ["group/info"],
+  "modules-center": ["custom/cava"],
   "modules-right": [
     "group/system"
   ],
 
+  "group/info":{
+    "orientation": "horizontal",
+    "modules": ["clock","hyprland/workspaces"]
+  },
   "group/system": {
     "orientation": "horizontal",
     "modules": [
@@ -20,11 +24,14 @@
       "group/drawer"
     ]
   },
-
+"custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "return-type": "json"
+},
 "group/drawer": {
   "orientation": "horizontal",
   "drawer": {
-    "transition-duration": 250,
+    "transition-duration": 300,
     "transition-left-to-right": true
   },
   "modules": [

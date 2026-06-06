@@ -1,0 +1,29 @@
+# Core Configuration
+max-visible=5
+sort=-time
+
+# Typography
+font=JetBrainsMono Nerd Font, Ubuntu 13px
+text-color=#bac2deff
+
+# Window & Border Styles (Fixed hex alpha mapping)
+background-color=#0f0f14eb
+border-size=1
+border-color=#aea2e666
+border-radius=16
+margin=4
+
+# Padding (Mako directional format: top,right,bottom,left)
+padding=12,16,12,16
+
+# Progress bar matching selection layer
+progress-color=#aea2e673
+
+# Icon Handling
+icons=0
+
+# High Urgency (Matches your #entry:selected state color layout)
+[urgency=high]
+background-color=#8778c873
+text-color=#cdd6f4ff
+border-color=#aea2e6ab

@@ -1,6 +1,7 @@
 {
   "layer": "top",
   "position": "top",
+  "fixed-center" : true,
 
   "modules-left": ["group/info"],
   "modules-center": ["custom/cava"],
@@ -32,7 +33,8 @@
   
 "custom/cava": {
     "exec": "~/.config/waybar/scripts/cava.sh",
-    "return-type": "json"
+    "return-type": "json",
+    "restart-interval": 1
 },
 "group/drawer": {
   "orientation": "horizontal",
@@ -79,14 +81,14 @@
   },
 
   "network": {
-    "format-wifi": "  {signalstrength}%",
-    "format-ethernet": "󰈀 connected",
-    "format-disconnected": "󰖪 offline"
+    "format-wifi": "  {essid} {signalstrength}%",
+    "format-ethernet": "󰈀 Connected",
+    "format-disconnected": "󰖪 Offline"
   },
 
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-muted": "󰝟 muted",
+    "format-muted": "󰝟 Muted",
     "format-icons": {
       "default": ["", "", ""]
     },
@@ -99,7 +101,8 @@
   "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetoothStatus.sh",
     "on-click": "~/.config/waybar/scripts/bluetoothMenu.sh",
-    "persistent" : true
+    "persistent" : true,
+    "restart-interval": 1
   },
 
   "custom/power": {

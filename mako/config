@@ -12,7 +12,7 @@ border-size=1
 border-color=#aea2e666
 border-radius=16
 margin=4
-
+markup=1
 # Padding (Mako directional format: top,right,bottom,left)
 padding=12,16,12,16
 

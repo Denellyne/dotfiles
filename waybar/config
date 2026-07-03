@@ -32,9 +32,12 @@
   },
   
 "custom/cava": {
-    "exec": "~/.config/waybar/scripts/cava.sh",
+"exec": "~/.config/waybar/scripts/cava.sh",
     "return-type": "json",
-    "restart-interval": 1
+    "restart-interval": 1,
+    "on-click": "~/.config/waybar/scripts/mediaMenu.sh",
+    "on-click-middle": "playerctl play-pause",
+    "tooltip": true
 },
 "group/drawer": {
   "orientation": "horizontal",
@@ -58,7 +61,8 @@
   "clock": {
     "format": "  {:%H:%M %d/%m/%y}",
   "tooltip": true,
-  "tooltip-format" : "System Clock"
+  "tooltip-format" : "System Clock",
+"on-click": "xdg-open https://calendar.google.com/calendar/"
   },
 
   "cpu": {
@@ -101,6 +105,7 @@
   "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetoothStatus.sh",
     "on-click": "~/.config/waybar/scripts/bluetoothMenu.sh",
+    "return-type" : "json",
     "persistent" : true,
     "restart-interval": 1
   },

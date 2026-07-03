@@ -1,6 +1,8 @@
 # Core Configuration
 max-visible=5
 sort=-time
+default-timeout=5000
+ignore-timeout=1
 
 # Typography
 font=JetBrainsMono Nerd Font, Ubuntu 13px

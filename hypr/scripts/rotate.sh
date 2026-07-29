@@ -43,4 +43,4 @@ if [ $ROTATE == 2 ]; then
 fi
 
 # apply rotation
-hyprctl keyword monitor "$MONITOR, disable" && hyprctl keyword monitor "$MONITOR,${NATIVE_WIDTH}x${NATIVE_HEIGHT}@${REFRESH},${X_POS}x${Y_POS},$SCALE,transform,$NEXT_TRANSFORM"
+hyprctl eval "hl.monitor({ output = \"$MONITOR\", mode = \"${NATIVE_WIDTH}x${NATIVE_HEIGHT}@${REFRESH}\", position = \"${X_POS}x${Y_POS}\", scale = $SCALE, transform = $NEXT_TRANSFORM })"

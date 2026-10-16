@@ -16,9 +16,17 @@ local home = os.getenv("HOME")
 hl.monitor({
 	output = "desc:AOC 25G3ZM",
 	mode = "1920x1080@239.96",
+	position = "1920x0",
+	scale = 1,
+	transform = 0,
+})
+hl.monitor({
+	output = "desc:GWD ARZOPA 0000001505002",
+	mode = "1920x1080@100.00",
 	position = "0x0",
 	scale = 1,
 	transform = 0,
+	bitdepth = 10,
 })
 
 -------------------
@@ -102,7 +110,7 @@ hl.config({
 	},
 
 	input = {
-		kb_layout = "pt",
+		kb_layout = "us",
 		kb_model = "pc105",
 		follow_mouse = 0,
 		numlock_by_default = false,
